@@ -1,0 +1,54 @@
+digraph G {
+    // Global graph attributes
+    graph [fontsize=12, fontname="Helvetica", bgcolor="lightyellow"];
+
+    // Global node attributes
+    node [shape=box, style=filled, color="lightblue", fontcolor="black", fontname="Fira Code", fontsize=10, margin="0.2,0.2"];
+
+    // Global edge attributes
+    edge [color="gray", fontcolor="black", fontname="Helvetica", fontsize=10, penwidth=1.5, arrowsize=0.8];
+
+    // Subgraph to group nodea and nodeb
+    subgraph cluster_0 {
+        style=filled;
+        color=lightgrey;
+        node [style=filled,color=white, fontname="Consolas"];
+        label = "初始值";
+        nodea [label="a: x=1"];
+        nodeb [label="b: y=2"];
+        nodea -> nodeb [color="black"];
+        pos="0,0!";
+    }
+
+    // Subgraph to group nodec and noded
+    subgraph cluster_1 {
+        style=filled;
+        color=lightgrey;
+        node [style=filled,color=white, fontname="Consolas"];
+        label = "Thread t1";
+        nodec [label="c: y=4"];
+        noded [label="d: x=3"];
+        nodec -> noded [color="black"];
+        pos="2,1!";
+    }
+
+    // Subgraph to group nodee and nodef
+    subgraph cluster_2 {
+        style=filled;
+        color=lightgrey;
+        node [style=filled,color=white, fontname="Consolas"];
+        label = "Thread t2";
+        nodee [label="e: x=1"];
+        nodef [label="f: y=2"];
+        nodee -> nodef [color="black"];
+        pos="1,1!";
+    }
+
+    // Edges with specific attributes
+    nodeb -> nodec [color="deeppink4"];
+    nodeb -> nodee [color="deeppink4"];
+
+    nodea -> nodee [label=<<font color="red">读取</font>>, color="red"];
+    nodeb -> nodef [label=<<font color="red">读取</font>>, color="red"];
+
+}

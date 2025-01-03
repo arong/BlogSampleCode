@@ -1,0 +1,22 @@
+@startuml
+participant Client
+participant Router1
+participant Router2
+participant Server
+
+Client -> Router1: SYN
+Router1 -> Router2: SYN
+Router2 -> Server: SYN
+Server --> Router2: SYN-ACK
+Router2 --> Router1: SYN-ACK
+Router1 --> Client: SYN-ACK
+Client -> Router1: ACK
+Router1 -> Router2: ACK
+Router2 -> Server: ACK
+Client -> Router1: Data
+Router1 -> Router2: Data
+Router2 -> Server: Data
+Server --> Router2: ACK
+Router2 --> Router1: ACK
+Router1 --> Client: ACK
+@enduml

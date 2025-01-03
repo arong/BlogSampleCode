@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.28)
+project(MultiThreading CXX)
+
+set(CMAKE_CXX_STANDARD 23)
+
+add_executable(a0naive_sample 0_naive_sample.cpp)
+add_executable(a1mutex_sample 1_mutex_sample.cpp)
+add_executable(a2shared_mutex_sample 2_shared_mutex_sample.cpp)
+add_executable(a3scoped_lock_demo 3_scoped_lock.cpp)
+add_executable(a4recursive_mutex_sample 4_recursive_mutex_sample.cpp)
+
+add_executable(timed_mutex_sample timed_mutex_sample.cpp)
+# add_executable(recursive_timed_mutex_sample recursive_timed_mutex_sample.cpp)
+# add_executable(shared_timed_mutex_sample shared_timed_mutex_sample.cpp)

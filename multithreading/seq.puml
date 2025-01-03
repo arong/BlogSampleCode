@@ -1,0 +1,27 @@
+@startuml
+participant "-100"
+participant 0
+participant 100
+
+alt case1
+
+0 -> 100: t1 Deposit(100)
+100 -> 0: t2 Withdraw(100)
+
+else case2
+
+0 -> "-100": t2 Withdraw(100)
+"-100" -> 0: t1 Deposit(100)
+
+else case3
+
+0 -> 100: t1 Deposit(100)
+0 -> "-100": t2 Withdraw(100)
+
+else case4
+
+0 -> "-100": t2 Withdraw(100)
+0 -> 100: t1 Deposit(100)
+
+end
+@enduml

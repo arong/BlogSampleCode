@@ -1,0 +1,13 @@
+int main() {
+  atomic_int x = 1;
+  atomic_int y = 2;
+  {{{ {
+         y.store(4, memory_order_release);
+         x.store(3, memory_order_release);
+      }
+  ||| {
+         x.load(memory_order_acquire);
+         y.load(memory_order_acquire);
+      }
+  }}}
+}

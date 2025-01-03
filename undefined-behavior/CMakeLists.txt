@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.28)
+project(UB CXX)
+set(CMAKE_CXX_STANDARD 11)
+
+add_executable(e3 e3.cpp)
+add_executable(e4 e4.cpp)
+add_executable(e5 e5.cpp)
+add_executable(e7 e7.cpp)
+add_executable(e8 e8.cpp)
+add_executable(e9 e9.cpp)
+add_executable(e10 e10.cpp)

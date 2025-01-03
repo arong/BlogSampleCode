@@ -1,0 +1,30 @@
+digraph G {
+ splines=true;
+ overlap=false;
+ ranksep = 0.2;
+ nodesep = 0.25;
+/* legend */
+fontsize=10 fontname="Helvetica" label=""; 
+
+/* columns */
+/* column */
+
+nodea [shape=plaintext, fontname="Helvetica", fontsize=10]  [label="a:Wna x=1", pos="1.000000,3.100000!"] [margin="0.0,0.0"][fixedsize="true"][height="0.200000"][width="0.900000"];
+nodeb [shape=plaintext, fontname="Helvetica", fontsize=10]  [label="b:Wna y=2", pos="1.000000,2.400000!"] [margin="0.0,0.0"][fixedsize="true"][height="0.200000"][width="0.900000"];
+/* column */
+
+nodec [shape=plaintext, fontname="Helvetica", fontsize=10]  [label="c:Wrel y=4", pos="2.500000,1.700000!"] [margin="0.0,0.0"][fixedsize="true"][height="0.200000"][width="0.900000"];
+noded [shape=plaintext, fontname="Helvetica", fontsize=10]  [label="d:Wrel x=3", pos="2.500000,1.000000!"] [margin="0.0,0.0"][fixedsize="true"][height="0.200000"][width="0.900000"];
+/* column */
+
+nodee [shape=plaintext, fontname="Helvetica", fontsize=10]  [label="e:Racq x=3", pos="4.000000,1.700000!"] [margin="0.0,0.0"][fixedsize="true"][height="0.200000"][width="0.900000"];
+nodef [shape=plaintext, fontname="Helvetica", fontsize=10]  [label="f:Racq y=4", pos="4.000000,1.000000!"] [margin="0.0,0.0"][fixedsize="true"][height="0.200000"][width="0.900000"];
+nodec -> noded [label=<<font color="black">sb</font>>, color="black", fontname="Helvetica", fontsize=10, penwidth=1., arrowsize="0.8"];
+nodee -> nodef [label=<<font color="black">sb</font>>, color="black", fontname="Helvetica", fontsize=10, penwidth=1., arrowsize="0.8"];
+nodea -> nodeb [label=<<font color="black">sb</font>>, color="black", fontname="Helvetica", fontsize=10, penwidth=1., arrowsize="0.8"];
+nodea -> noded [label=<<font color="blue">mo</font>>, color="blue", fontname="Helvetica", fontsize=10, penwidth=1., arrowsize="0.8"];
+nodeb -> nodee [label=<<font color="deeppink4">sw</font>>, color="deeppink4", fontname="Helvetica", fontsize=10, penwidth=1., arrowsize="0.8"];
+nodeb -> nodec [label=<<font color="blue">mo</font>,<font color="deeppink4">sw</font>>, color="blue:deeppink4", fontname="Helvetica", fontsize=10, penwidth=1., arrowsize="1.0"];
+nodec -> nodef [label=<<font color="red">rf</font>,<font color="deeppink4">sw</font>>, color="red:deeppink4", fontname="Helvetica", fontsize=10, penwidth=1., arrowsize="1.0"];
+noded -> nodee [label=<<font color="red">rf</font>,<font color="deeppink4">sw</font>>, color="red:deeppink4", fontname="Helvetica", fontsize=10, penwidth=1., arrowsize="1.0"];
+}

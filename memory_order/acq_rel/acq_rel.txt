@@ -1,0 +1,17 @@
+int main() { 
+  atomic_int x = 1; 
+  atomic_int y = 2;  
+  {{{ { 
+         y.store(4, memory_order_acq_rel); 
+         x.store(3, memory_order_acq_rel); 
+      } 
+  ||| { 
+         x.store(5, memory_order_acq_rel);
+         y.store(6, memory_order_acq_rel); 
+      }
+  ||| { 
+         x.load(memory_order_acq_rel);
+         y.load(memory_order_acq_rel); 
+      } 
+  }}} 
+}
