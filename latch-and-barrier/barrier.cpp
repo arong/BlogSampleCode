@@ -10,10 +10,9 @@ void phase_work(std::barrier<>& barrier, int id) {
     // 模拟当前阶段的工作
     std::this_thread::sleep_for(std::chrono::milliseconds(100 * id));
 
-    // 确保当前线程的输出不被其他线程干扰
-    std::osyncstream sync_out(std::cout);
     // 等待所有线程完成当前阶段
-    sync_out << "线程 " << id << " 完成了任务 " << phase << ". \n";
+    std::osyncstream(std::cout)
+        << "线程 " << id << " 完成了任务 " << phase << ". \n";
     barrier.arrive_and_wait();
   }
 }

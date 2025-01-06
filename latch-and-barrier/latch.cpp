@@ -7,10 +7,7 @@
 
 void worker(std::latch& latch, int id) {
   // 使用 osyncstream 同步输出
-  {
-    std::osyncstream sync_out(std::cout);
-    sync_out << "线程 " << id << " 正在工作...\n";
-  }
+  std::osyncstream(std::cout) << "线程 " << id << " 正在工作...\n";
 
   // 生成一个随机值, 范围为[100, 500]
   std::random_device rd;
@@ -22,10 +19,8 @@ void worker(std::latch& latch, int id) {
   std::this_thread::sleep_for(std::chrono::milliseconds(sleep_duration));
 
   // 发布完成信号并同步输出
-  {
-    std::osyncstream sync_out(std::cout);
-    sync_out << "线程 " << id << " 完成了任务. \n";
-  }
+  std::osyncstream(std::cout) << "线程 " << id << " 完成了任务. \n";
+
   latch.count_down();
 }
 
