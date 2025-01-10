@@ -1,4 +1,5 @@
-build/
+**/cmake-build-debug/
+**/build/
 .vscode/
 *.fdb_latexmk
 *.aux
