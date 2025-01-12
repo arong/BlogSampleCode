@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.28)
 
 project(FilesystemDemo CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
-add_executable(function function.cpp)
-add_executable(class class.cpp)
+add_subdirectory(function-template)
