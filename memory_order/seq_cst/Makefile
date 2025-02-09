@@ -37,6 +37,6 @@ all: $(SVG_FILES) $(PNG_FILES)
 
 # Clean up auxiliary files
 clean:
-	rm -f *.aux *.log *.out *.pdf *.webp *.svg *.dvi
+	rm -f *.aux *.log *.out *.pdf *.webp *.svg *.dvi *.fls *.fdb_latexmk
 
 .PHONY: all clean
