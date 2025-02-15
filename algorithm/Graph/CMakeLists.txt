@@ -51,6 +51,8 @@ target_sources(
          AdjMatrix.ixx
          AdjList.ixx
          GraphInterface.ixx
+         BFS.ixx
+         DFS.ixx
 )
 target_link_libraries(Graph PRIVATE fmt::fmt)
 
