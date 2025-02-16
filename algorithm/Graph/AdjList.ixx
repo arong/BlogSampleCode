@@ -9,7 +9,7 @@ module;
 #include <variant>
 #include <vector>
 export module Graph.AdjList;
-export import Graph.Interface;
+import Graph.Interface;
 
 export namespace graph {
 class AdjList : public Graph {

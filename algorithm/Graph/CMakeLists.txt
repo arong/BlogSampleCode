@@ -53,6 +53,7 @@ target_sources(
          GraphInterface.ixx
          BFS.ixx
          DFS.ixx
+         TopologicalSort.ixx
 )
 target_link_libraries(Graph PRIVATE fmt::fmt)
 

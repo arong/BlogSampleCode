@@ -10,7 +10,6 @@ module;
 
 export module Graph.DFS;
 import Graph.AdjList;
-import Graph.Interface;
 
 export namespace graph {
 

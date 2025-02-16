@@ -8,7 +8,6 @@ module;
 
 export module Graph.BFS;
 import Graph.AdjList;
-import Graph.Interface;
 
 export namespace graph {
 
