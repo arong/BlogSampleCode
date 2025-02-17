@@ -145,6 +145,20 @@ class AdjList : public Graph {
     }
     edge_num_++;
   }
+
+  [[nodiscard]] std::vector<std::tuple<Vertex, Vertex, Vertex>>
+  GetWeightedEdges() const {
+    if (!weighted_) throw std::runtime_error("unweighted graph");
+    std::vector<std::tuple<Vertex, Vertex, Vertex>> edges;
+    for (Vertex u = 0; u < adj_.size(); u++) {
+      for (auto& [v, w] : std::get<AdjWeighted>(adj_[u])) {
+        if (directed_ || u < v) {
+          edges.emplace_back(u, v, w);
+        }
+      }
+    }
+    return edges;
+  }
   [[nodiscard]] std::string FormatAsDot() const final {
     std::string dot;
     std::string dash("--");
@@ -158,14 +172,15 @@ class AdjList : public Graph {
     dot.append("\tnode [shape=circle;]\n");
     auto inserter = std::back_inserter(dot);
     for (Vertex u = 0; u < adj_.size(); u++) {
-      fmt::format_to(inserter, "\t{};\n", u);
+      fmt::format_to(inserter, "\t{};\n", (char)('A' + u));
     }
 
     for (Vertex u = 0; u < adj_.size(); u++) {
       if (weighted_) {
         for (auto& [v, w] : std::get<AdjWeighted>(adj_[u])) {
           if (directed_ || u < v) {
-            fmt::format_to(inserter, "\t{} {} {} [label={}];\n", u, dash, v, w);
+            fmt::format_to(inserter, "\t{} {} {} [label={}];\n", char(u + 'A'),
+                           dash, char(v + 'A'), w);
           }
         }
       } else {

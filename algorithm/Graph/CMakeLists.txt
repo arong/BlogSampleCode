@@ -53,6 +53,8 @@ target_sources(
          GraphInterface.ixx
          BFS.ixx
          DFS.ixx
+         Dijkstra.ixx
+         BellmanFord.ixx
          TopologicalSort.ixx
 )
 target_link_libraries(Graph PRIVATE fmt::fmt)

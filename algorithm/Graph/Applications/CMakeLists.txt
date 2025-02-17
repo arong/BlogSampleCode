@@ -12,3 +12,6 @@ target_link_libraries(DFSDemo PRIVATE Graph fmt::fmt)
 
 add_executable(TopoDemo TopoDemo.cpp)
 target_link_libraries(TopoDemo PRIVATE Graph fmt::fmt)
+
+add_executable(BellmanFordDemo BellmanFordDemo.cpp)
+target_link_libraries(BellmanFordDemo PRIVATE Graph fmt::fmt)
