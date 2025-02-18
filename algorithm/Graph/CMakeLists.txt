@@ -55,6 +55,9 @@ target_sources(
          DFS.ixx
          Dijkstra.ixx
          BellmanFord.ixx
+         Kruskal.ixx
+         Prim.ixx
+         UnionFind.ixx
          TopologicalSort.ixx
 )
 target_link_libraries(Graph PRIVATE fmt::fmt)
