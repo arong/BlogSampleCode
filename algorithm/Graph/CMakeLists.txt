@@ -53,12 +53,14 @@ target_sources(
          GraphInterface.ixx
          BFS.ixx
          DFS.ixx
-         Dijkstra.ixx
-         BellmanFord.ixx
-         Kruskal.ixx
-         Prim.ixx
+         Dijkstra.ixx    # SSSP
+         BellmanFord.ixx # SSSP
+         Kruskal.ixx     # MST
+         Prim.ixx        # MST
          UnionFind.ixx
          TopologicalSort.ixx
+         Kosaraju.ixx    # SCC
+         Tarjan.ixx      # SCC
 )
 target_link_libraries(Graph PRIVATE fmt::fmt)
 
