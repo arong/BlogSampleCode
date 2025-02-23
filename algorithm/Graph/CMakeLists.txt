@@ -61,6 +61,9 @@ target_sources(
          TopologicalSort.ixx
          Kosaraju.ixx    # SCC
          Tarjan.ixx      # SCC
+         Bipartite.ixx   # Bipartite
+         CC.ixx          # CC
+         Hungarian.ixx  # Hungarian
 )
 target_link_libraries(Graph PRIVATE fmt::fmt)
 

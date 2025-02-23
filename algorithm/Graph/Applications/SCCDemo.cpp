@@ -19,11 +19,5 @@ int main() {
   for (auto &v : ret) {
     fmt::println("{}", v);
   }
-
-  graph::Tarjan scc2(graph);
-  auto ret2 = scc2.GetSCC();
-  for (auto &v : ret2) {
-    fmt::println("tarjan: {}", v);
-  }
   return 0;
 }
