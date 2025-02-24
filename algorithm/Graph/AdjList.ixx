@@ -159,6 +159,21 @@ class AdjList : public Graph {
     }
     return edges;
   }
+  void RemoveEdge(Vertex u, Vertex v) {
+    validateVertex(u);
+    validateVertex(v);
+    if (weighted_) {
+      std::get<AdjWeighted>(adj_[u]).erase(v);
+      if (!directed_) {
+        std::get<AdjWeighted>(adj_[v]).erase(u);
+      }
+    } else {
+      std::get<AdjUnWeighted>(adj_[u]).erase(v);
+      if (!directed_) {
+        std::get<AdjUnWeighted>(adj_[v]).erase(u);
+      }
+    }
+  }
   [[nodiscard]] std::string FormatAsDot() const final {
     std::string dot;
     std::string dash("--");

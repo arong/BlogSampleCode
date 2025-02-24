@@ -63,7 +63,8 @@ target_sources(
          Tarjan.ixx      # SCC
          Bipartite.ixx   # Bipartite
          CC.ixx          # CC
-         Hungarian.ixx  # Hungarian
+         Hungarian.ixx   # Hungarian
+         Hierholzer.ixx  # Euler
 )
 target_link_libraries(Graph PRIVATE fmt::fmt)
 
