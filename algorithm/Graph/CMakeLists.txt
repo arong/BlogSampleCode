@@ -65,6 +65,7 @@ target_sources(
          CC.ixx          # CC
          Hungarian.ixx   # Hungarian
          Hierholzer.ixx  # Euler
+         FloydWarshall.ixx # All-pairs shortest path
 )
 target_link_libraries(Graph PRIVATE fmt::fmt)
 
