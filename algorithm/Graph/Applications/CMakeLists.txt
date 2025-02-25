@@ -22,6 +22,8 @@ target_link_libraries(SCCDemo PRIVATE Graph fmt::fmt)
 add_executable(HungarianDemo HungarianDemo.cpp)
 target_link_libraries(HungarianDemo PRIVATE Graph fmt::fmt)
 
-
 add_executable(EulerDemo EulerDemo.cpp)
 target_link_libraries(EulerDemo PRIVATE Graph fmt::fmt)
+
+add_executable(APSPDemo APSPDemo.cpp)
+target_link_libraries(APSPDemo PRIVATE Graph fmt::fmt)

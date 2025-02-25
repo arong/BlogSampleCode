@@ -44,7 +44,8 @@ class FloydWarshall {
     for (int k = 0; k < n; ++k) {
       for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
-          if (adj_[i][k] + adj_[k][j] < adj_[i][j]) {
+          if (adj_[i][k] != INT_MAX && adj_[k][j] != INT_MAX &&
+              (adj_[i][k] + adj_[k][j] < adj_[i][j])) {
             adj_[i][j] = adj_[i][k] + adj_[k][j];
             pre_[i][j] = pre_[k][j];
           }
